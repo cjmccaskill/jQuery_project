@@ -105,6 +105,11 @@ ul {
   margin: auto;
 }
 
+.the-white {
+  background-color: #fff;
+  border: 2px solid #808080; 
+  width: 10em;
+}
 
 /*aside {
   display: inline-block;

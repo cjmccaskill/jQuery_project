@@ -8,7 +8,7 @@ const hobbits = [
   "Peregrin 'Pippin' Took",
 ];
 
-const buddies = ["Gandalf the Grey", "Legolas", "Gimli", "Strider", "Boromir"];
+const buddies = ["Gandalf the Grey", "Strider", "Legolas", "Gimli", "Boromir"];
 
 const baddies = ["Sauron", "Saruman", "The Uruk-hai", "Orcs"];
 
@@ -131,6 +131,11 @@ const makeBuddies = () => {
 const leaveTheShire = () => {
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
+  const $leaving = $("ul").eq(0);
+  $("article").eq(1).append($leaving);
+
+  // ** Our zoom group came up with this solution ** Sam, Trace, Christopher
+  // $('.hobbit').appendTo('#Rivendell')
 };
 
 // COMMIT YOUR WORK
@@ -142,6 +147,8 @@ const leaveTheShire = () => {
 const beautifulStranger = () => {
   // 1. change the buddy 'Strider' textnode to "Aragorn"
   // hint: You can get a list of elements by tag name, such as 'aside'
+  const $stranger = $(".buddy").eq(3).text("Aragorn");
+  $("aside").eq(3).append($stranger);
 };
 
 // COMMIT YOUR WORK
@@ -155,6 +162,12 @@ const forgeTheFellowShip = () => {
   // 2. add an h1 with the text 'The Fellowship' to this new div
   // 3. append the fellowship to middle-earth
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
+  const $div = $("<div>").attr("id", "the-fellowship");
+  const $h1 = $("<h1>").text("The Fellowship");
+  $h1.appendTo($div);
+  $("#middle-earth").append($div);
+  $(".hobbit").appendTo("#the-fellowship");
+  $(".buddy").appendTo("#the-fellowship");
 };
 
 // COMMIT YOUR WORK
@@ -167,6 +180,7 @@ const theBalrog = () => {
   // 1. change the 'Gandalf' text to 'Gandalf the White'
   // 2. add a class "the-white" to this element
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
+  $(".buddy").eq(0).text("Gandalf the White").addClass("the-white");
 };
 
 // COMMIT YOUR WORK
